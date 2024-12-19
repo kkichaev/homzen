@@ -1,0 +1,15 @@
+RewriteEngine on
+
+# Redirect Trailing Slashes If Not A Folder...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^public
+
+RewriteRule ^(.*)$ public/$1 [L]
+
+order deny,allow
+deny from all
+#Список IP, с которых доступ разрешен
+allow from 178.57.123.124 109.195.115.37 176.59.45.165 109.161.48.218 176.59.36.173 176.59.35.161 109.161.48.60 176.212.48.113 176.59.38.134
