@@ -142,6 +142,10 @@
                             <option value="number">{{ trans('plugins/custom-field::base.form.types.number') }}</option>
                             <option value="email">{{ trans('plugins/custom-field::base.form.types.email') }}</option>
                             <option value="password">{{ trans('plugins/custom-field::base.form.types.password') }}</option>
+                            <option value="time">{{ trans('plugins/custom-field::base.form.types.time') }}</option>
+                            <option value="date">{{ trans('plugins/custom-field::base.form.types.date') }}</option>
+                            <option value="date_time">{{ trans('plugins/custom-field::base.form.types.date_time') }}</option>
+                            <option value="cycle">{{ trans('plugins/custom-field::base.form.types.cycle') }}</option>
                         </optgroup>
                         <optgroup label="{{ trans('plugins/custom-field::base.form.groups.content') }}">
                             <option value="wysiwyg">{{ trans('plugins/custom-field::base.form.types.wysiwyg') }}</option>

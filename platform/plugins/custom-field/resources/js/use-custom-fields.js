@@ -232,6 +232,10 @@ class UseCustomFields {
             repeater: $('#_render_custom_field_repeater_template').html(),
             repeaterItem: $('#_render_custom_field_repeater_item_template').html(),
             repeaterFieldLine: $('#_render_custom_field_repeater_line_template').html(),
+            date: $('#_render_custom_field_date_template').html(),
+            time: $('#_render_custom_field_time_template').html(),
+            date_time: $('#_render_custom_field_date_time_template').html(),
+            cycle: $('#_render_custom_field_cycle_template').html(),
         }
 
         let initWYSIWYG = ($element) => {
