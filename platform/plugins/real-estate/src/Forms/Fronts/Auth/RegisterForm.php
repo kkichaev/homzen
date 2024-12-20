@@ -128,6 +128,12 @@ class RegisterForm extends AuthForm
             ])
             ->add('filters', HtmlField::class, [
                 'html' => apply_filters(BASE_FILTER_AFTER_LOGIN_OR_REGISTER_FORM, null, Account::class),
+            ])->add('telegram-bot', HtmlField::class, [
+                'html' => '<script async src=" https://telegram.org/js/telegram-widget.js?15 " '.
+                            'data-telegram-login="Ytimeinfo_bot" '.
+                            'data-size="large" ' .
+                            'data-auth-url=" https://ytime.ru/auth/telegram"></script >',
             ]);
+
     }
 }
