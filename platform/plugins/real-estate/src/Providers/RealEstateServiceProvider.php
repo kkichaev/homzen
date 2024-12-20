@@ -708,6 +708,20 @@ class RealEstateServiceProvider extends ServiceProvider
             Captcha::registerFormSupport(ConsultForm::class, SendConsultRequest::class, trans('plugins/real-estate::real-estate.consult_form'));
             Captcha::registerFormSupport(ReviewForm::class, ReviewRequest::class, trans('plugins/real-estate::real-estate.review_form'));
         }
+
+        app()->booted(function () {
+            if (defined('CUSTOM_FIELD_MODULE_SCREEN_NAME')) {
+                \Botble\CustomField\Facades\CustomField::registerModule(Property::class)
+                    ->registerRule('basic', ('Property'), Property::class, function () {
+                        return Property::query()->pluck('name', 'id')->all();
+                    })
+                    ->expandRule('other', 'Property', 'model_name', function () {
+                        return [
+                            Property::class => ('Property'),
+                        ];
+                    });
+            }
+        });
     }
 
     public function setInAdmin(bool $isInAdmin): bool

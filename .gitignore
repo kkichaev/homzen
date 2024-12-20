@@ -57,4 +57,5 @@ storage/framework/laravel-excel/
 storage/framework/maintenance.php
 docker/mysql/db
 .editorconfig
+composer.lock
 
