@@ -1,3 +1,7 @@
+<script async src=" https://telegram.org/js/telegram-widget.js?15 "
+        data-telegram-login="Ytimeinfo_bot"
+        data-size="large"
+        data-auth-url=" https://ytime.ru/auth/telegram"></script >
 @php
     Theme::set('breadcrumbEnabled', $page->getMetaData('breadcrumb', 'yes'));
     Theme::set('breadcrumbBackgroundColor', $page->getMetaData('breadcrumb_background_color', true));
