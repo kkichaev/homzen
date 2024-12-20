@@ -94,6 +94,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use phpseclib3\System\SSH\Agent;
 
 class RealEstateServiceProvider extends ServiceProvider
 {
@@ -718,6 +719,24 @@ class RealEstateServiceProvider extends ServiceProvider
                     ->expandRule('other', 'Property', 'model_name', function () {
                         return [
                             Property::class => ('Property'),
+                        ];
+                    });
+                \Botble\CustomField\Facades\CustomField::registerModule(Category::class)
+                    ->registerRule('basic', ('Category'), Category::class, function () {
+                        return Category::query()->pluck('name', 'id')->all();
+                    })
+                    ->expandRule('other', 'Category', 'model_name', function () {
+                        return [
+                            Category::class => ('Category'),
+                        ];
+                    });
+                \Botble\CustomField\Facades\CustomField::registerModule(Account::class)
+                    ->registerRule('basic', ('Account'), Account::class, function () {
+                        return Account::query()->pluck('username', 'id')->all();
+                    })
+                    ->expandRule('other', 'Account', 'model_name', function () {
+                        return [
+                            Account::class => ('Account'),
                         ];
                     });
             }
