@@ -277,6 +277,10 @@ class UseCustomFields {
                 case 'text':
                 case 'number':
                 case 'email':
+                case 'date':
+                case 'time':
+                case 'date-time':
+                case 'cycle':
                 case 'password':
                     result = result.replace(/__placeholderText__/gi, box.options.placeholderText || '')
                     result = result.replace(/__value__/gi, box.value || box.options.defaultValue || '')
@@ -511,6 +515,10 @@ class UseCustomFields {
                 case 'text':
                 case 'number':
                 case 'email':
+                case 'date':
+                case 'time':
+                case 'date-time':
+                case 'cycle':
                 case 'password':
                 case 'image':
                 case 'file':
@@ -566,6 +574,10 @@ class UseCustomFields {
                 case 'text':
                 case 'number':
                 case 'email':
+                case 'date':
+                case 'time':
+                case 'date-time':
+                case 'cycle':
                 case 'password':
                 case 'image':
                 case 'file':
