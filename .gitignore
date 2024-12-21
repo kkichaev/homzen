@@ -58,4 +58,4 @@ storage/framework/maintenance.php
 docker/mysql/db
 .editorconfig
 composer.lock
-
+package-lock.json
