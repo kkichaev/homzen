@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-const purgeCss = require('@fullhuman/postcss-purgecss');
+const purgecss = require('@fullhuman/postcss-purgecss');
 const path = require('path');
 let directory = path.basename(path.resolve(__dirname));
 
@@ -8,25 +8,26 @@ const dist = 'public/vendor/core/plugins/' + directory;
 
 const filterCss = [];
 
+console.log(purgecss)
 if (mix.inProduction()) {
-//    filterCss.push(
-//        purgeCss({
-//            content: [
-//                source + '/resources/views/**/*.blade.php',
-//                source + '/resources/assets/js/components/*.vue',
-//                source + '/resources/assets/js/components/**/*.vue',
-//            ],
-//            defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || [],
-//            safelist: [
-//                /active/,
-//                /show/,
-//                /down/,
-//                /loading/,
-//                /^bb-dialog/
-//
-//            ]
-//        })
-//    )
+   filterCss.push(
+       purgecss.purgeCSSPlugin({
+           content: [
+               source + '/resources/views/**/*.blade.php',
+               source + '/resources/assets/js/components/*.vue',
+               source + '/resources/assets/js/components/**/*.vue',
+           ],
+           defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || [],
+           safelist: [
+               /active/,
+               /show/,
+               /down/,
+               /loading/,
+               /^bb-dialog/
+
+           ]
+       })
+   )
 }
 
 mix
